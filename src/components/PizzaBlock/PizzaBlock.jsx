@@ -6,8 +6,7 @@ function PizzaBlock({name, imageUrl, price, types, sizes}) {
     const typesPizzas = ["тонкое", "традиционное"];
     const sizePizzas = [26, 30, 40];
 
-    console.log(typePizza)
-    console.log(sizePizza)
+
 
     const onClickType = (index) => {
         setTypePizza(index)
