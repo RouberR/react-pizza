@@ -1,6 +1,6 @@
-import { React, useState, useEffect, useRef } from "react";
+import React, {useState, useEffect, useRef } from "react";
 
-function Sorting({ items }) {
+const Sorting = React.memo(function Sorting({ items }) {
   const [sortingVisible, setSortingVisible] = useState(false);
   const [clickItem, setClickItem] = useState(0);
   const sortRef = useRef();
@@ -12,7 +12,6 @@ function Sorting({ items }) {
   const onClickOutside = (e) => {
     if (!e.path.includes(sortRef.current)) {
       setSortingVisible(false);
-      console.log(e);
     }
   };
 
@@ -60,6 +59,6 @@ function Sorting({ items }) {
       )}
     </div>
   );
-}
+})
 
 export default Sorting;
