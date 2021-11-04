@@ -1,7 +1,7 @@
 const initialState = {
   category: null,
   sortBy: {
-    type: "pop",
+    name: "популярности",
     order: "desc",
   },
 };

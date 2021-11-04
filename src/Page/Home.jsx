@@ -6,9 +6,9 @@ import {fetchPizzas} from "../redux/actions/pizzas";
 
 const categoryNames = ["Мясные", "Вегетарианская", "Гриль", "Острые", "Закрытые"];
 const sortNames = [
-          { type: "pop", order: "desc"},
-           {type: "price", order: "desc"},
-            {type:"abc", order: "asc" }]
+          {name:"популярности", type: "rating", order: "desc"},
+           {name:"цене", type: "price", order: "desc"},
+            {name:"алфавиту", type:"name", order: "desc" }]
 
 function Home() {
   const dispatch = useDispatch()
@@ -37,7 +37,7 @@ const onSelectSortBy = React.useCallback((index) => {
           onClickItems = {onSelectCategory}
           items={categoryNames}
         />
-        <Sorting activeSortType={sortBy.type} items={sortNames} onSelectSortBy={onSelectSortBy} />
+        <Sorting activeSortType={sortBy.name} items={sortNames} onSelectSortBy={onSelectSortBy} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">

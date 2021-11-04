@@ -22,7 +22,7 @@ const Sorting = React.memo(function Sorting({ items, activeSortType, onSelectSor
     onSelectSortBy(index);
     setSortingVisible(!sortingVisible);
   };
-
+console.log(activeSortType)
   return (
     <div ref={sortRef} className="sort">
       <div className="sort__label">
@@ -48,9 +48,9 @@ const Sorting = React.memo(function Sorting({ items, activeSortType, onSelectSor
               <li
                 key={`${obj.type}_${index}`}
                 onClick={() => onClickItem(obj)}
-                className={activeSortType === obj.type ? "active" : null}
+                className={activeSortType === obj.name ? "active" : null}
               >
-                {obj.type}
+                {obj.name}
               </li>
             ))}
           </ul>
