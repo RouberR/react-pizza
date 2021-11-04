@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useRef } from "react";
 
-const Sorting = React.memo(function Sorting({ items }) {
+const Sorting = React.memo(function Sorting({ items, activeSortType, onSelectSortBy }) {
   const [sortingVisible, setSortingVisible] = useState(false);
-  const [clickItem, setClickItem] = useState(0);
   const sortRef = useRef();
 
   useEffect(() => {
@@ -20,7 +19,7 @@ const Sorting = React.memo(function Sorting({ items }) {
   };
 
   const onClickItem = (index) => {
-    setClickItem(index);
+    onSelectSortBy(index);
     setSortingVisible(!sortingVisible);
   };
 
@@ -40,7 +39,7 @@ const Sorting = React.memo(function Sorting({ items }) {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={onClickVisible}>{items[clickItem].name}</span>
+        <span onClick={onClickVisible}>{activeSortType}</span>
       </div>
       {sortingVisible && (
         <div className="sort__popup">
@@ -48,10 +47,10 @@ const Sorting = React.memo(function Sorting({ items }) {
             {items.map((obj, index) => (
               <li
                 key={`${obj.type}_${index}`}
-                onClick={() => onClickItem(index)}
-                className={clickItem === index ? "active" : null}
+                onClick={() => onClickItem(obj)}
+                className={activeSortType === obj.type ? "active" : null}
               >
-                {obj.name}
+                {obj.type}
               </li>
             ))}
           </ul>
