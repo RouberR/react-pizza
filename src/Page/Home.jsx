@@ -8,7 +8,7 @@ const categoryNames = ["Мясные", "Вегетарианская", "Грил
 const sortNames = [
           {name:"популярности", type: "rating", order: "desc"},
            {name:"цене", type: "price", order: "desc"},
-            {name:"алфавиту", type:"name", order: "desc" }]
+            {name:"алфавиту", type:"name", order: "asc" }]
 
 function Home() {
   const dispatch = useDispatch()
@@ -17,7 +17,6 @@ function Home() {
   const {category, sortBy} = useSelector(({filters}) => filters);
  
   React.useEffect(() => {
-    
     dispatch(fetchPizzas(category, sortBy))
   }, [category, sortBy]);
 

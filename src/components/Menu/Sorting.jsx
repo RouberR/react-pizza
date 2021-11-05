@@ -22,7 +22,7 @@ const Sorting = React.memo(function Sorting({ items, activeSortType, onSelectSor
     onSelectSortBy(index);
     setSortingVisible(!sortingVisible);
   };
-console.log(activeSortType)
+
   return (
     <div ref={sortRef} className="sort">
       <div className="sort__label">
