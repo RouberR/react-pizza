@@ -1,6 +1,10 @@
-export {default as Categories} from "./Menu/Categories.jsx";
-export {default as Sorting} from "./Menu/Sorting.jsx";
-export {default as Header} from "./Header/Header.jsx";
-export {default as PizzaBlock} from "./PizzaBlock/PizzaBlock.jsx";
-export {default as SkeletonBlock} from "./PizzaBlock/SkeletonBlock.jsx";
-export {default as CartPizza} from "./Cart/CartPizza.jsx";
+export { default as Categories } from "./Menu/Categories.jsx";
+export { default as Sorting } from "./Menu/Sorting.jsx";
+export { default as Header } from "./Header/Header.jsx";
+export { default as Button } from "./Header/Button.jsx";
+export { default as PizzaBlock } from "./PizzaBlock/PizzaBlock.jsx";
+export { default as SkeletonBlock } from "./PizzaBlock/SkeletonBlock.jsx";
+export { default as CartPizza } from "./Cart/CartPizza.jsx";
+export { default as CartEmpty } from "./Cart/CartEmpty.jsx";
+export { default as ClearAllCart } from "./Cart/ClearAllCart.jsx";
+export { default as CartInfoItem } from "./Cart/CartInfoItem.jsx";

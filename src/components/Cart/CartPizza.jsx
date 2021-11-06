@@ -1,6 +1,29 @@
 import React from "react";
+import Button from "../Header/Button";
 
-function CartPizza({name, type, size, price }) {
+function CartPizza({
+  id,
+  name,
+  type,
+  size,
+  price,
+  totalCount,
+  onRemoveCartItem,
+  onPlusItem,
+  onMinusItem,
+}) {
+  const onClickDelete = () => {
+    onRemoveCartItem(id);
+  };
+
+  const onClickPlus = () => {
+    onPlusItem(id);
+  };
+
+  const onClickMinus = () => {
+    onMinusItem(id);
+  };
+
   return (
     <div className="content__items">
       <div className="cart__item">
@@ -13,10 +36,15 @@ function CartPizza({name, type, size, price }) {
         </div>
         <div className="cart__item-info">
           <h3>{name}</h3>
-          <p>{type} тесто, {size} см.</p>
+          <p>
+            {type} тесто, {size} см.
+          </p>
         </div>
         <div className="cart__item-count">
-          <div className="button button--outline button--circle cart__item-count-minus">
+          <div
+            onClick={onClickMinus}
+            className="button button--outline button--circle cart__item-count-minus"
+          >
             <svg
               width="10"
               height="10"
@@ -34,8 +62,11 @@ function CartPizza({name, type, size, price }) {
               />
             </svg>
           </div>
-          <b>2</b>
-          <div className="button button--outline button--circle cart__item-count-plus">
+          <b>{totalCount}</b>
+          <div
+            onClick={onClickPlus}
+            className="button button--outline button--circle cart__item-count-plus"
+          >
             <svg
               width="10"
               height="10"
@@ -55,10 +86,10 @@ function CartPizza({name, type, size, price }) {
           </div>
         </div>
         <div className="cart__item-price">
-          <b>{price} ₽</b>
+          <b>{price} р</b>
         </div>
         <div className="cart__item-remove">
-          <div className="button button--outline button--circle">
+          <Button onClick={onClickDelete} className="button--circle" outline>
             <svg
               width="10"
               height="10"
@@ -75,7 +106,7 @@ function CartPizza({name, type, size, price }) {
                 fill="#EB5A1E"
               />
             </svg>
-          </div>
+          </Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,10 @@
-import React, {useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const Sorting = React.memo(function Sorting({ items, activeSortType, onSelectSortBy }) {
+const Sorting = React.memo(function Sorting({
+  items,
+  activeSortType,
+  onSelectSortBy,
+}) {
   const [sortingVisible, setSortingVisible] = useState(false);
   const sortRef = useRef();
 
@@ -58,6 +62,6 @@ const Sorting = React.memo(function Sorting({ items, activeSortType, onSelectSor
       )}
     </div>
   );
-})
+});
 
 export default Sorting;
