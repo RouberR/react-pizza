@@ -22,7 +22,7 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "concurrently \"react-scripts start\"  \"json-server -p 3001 -w public/db.json\"",
+    "start": "node server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
